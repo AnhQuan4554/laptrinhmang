@@ -12,11 +12,8 @@ private:
     string studentCode;
     string nameStudent;
     string old;
-   
 
 public:
-
-   
     string getStudentCode()
     {
         return studentCode;
@@ -41,7 +38,6 @@ public:
     {
         this->old = old;
     }
-   
 };
 
 vector<string> newStringData;
@@ -114,28 +110,32 @@ int main()
         strcpy(receivedData, buf);
         receivedData[recv_len] = '\0';
         // handle all event
-       
+
         tach_chuoi(receivedData);
-        Student stu ;
+        Student stu;
         stu.setStudentCode(newStringData[0]);
-        stu.setNameStudent(newStringData[1]) ;
-        stu.setOld(newStringData[2]) ;
+        stu.setNameStudent(newStringData[1]);
+        stu.setOld(newStringData[2]);
         /* start push infor student to file txt */
         ofstream fout("sinhvien.txt", ios::app);
         if (fout.is_open())
         {
-            fout<<"Thong tin sinh vien la "<<endl;
-            fout<<"Ma sinh vien :"<<stu.getStudentCode()<<endl;
-            fout<<"Ten sinh vien :"<<stu.getNameStudent()<<endl;
-            fout<<"Tuoi sinh vien :"<<stu.getOld()<<endl;
+            fout << "Thong tin sinh vien la " << endl;
+            fout << "Ma sinh vien :" << stu.getStudentCode() << endl;
+            fout << "Ten sinh vien :" << stu.getNameStudent() << endl;
+            fout << "Tuoi sinh vien :" << stu.getOld() << endl;
             fout.close();
         }
+
         /* end push infor student to file txt */
         /* show infor to screen in server */
         char result[BUFFER_SIZE];
-            strcpy(result, "Thong tin sinh vien da duoc luu"); // send data to client 
-            // cout<<result;//show the screen
-       
+        strcpy(result, stu.getStudentCode().c_str());
+        strcat(result, " ");
+        strcat(result, stu.getNameStudent().c_str());
+        strcat(result, " ");
+        strcat(result, stu.getOld().c_str());
+        // cout<<result;//show the screen
 
         // send back to client
         int send_len = sendto(sock, result, sizeof(result), 0, (struct sockaddr *)&client, slen);

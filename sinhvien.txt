@@ -6,3 +6,7 @@ Thong tin sinh vien la
 Ma sinh vien :B18
 Ten sinh vien :Hoang
 Tuoi sinh vien :23
+Thong tin sinh vien la 
+Ma sinh vien :B20
+Ten sinh vien :Quan
+Tuoi sinh vien :19
