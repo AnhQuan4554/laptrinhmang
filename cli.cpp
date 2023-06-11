@@ -5,7 +5,7 @@ using namespace std;
 
 #pragma comment(lib, "ws2_32.lib")
 #define BUFFER_SIZE 1024
-// gcc -g cli.cpp -lstdc++ -lws2_32 -o cli.exe
+
 
 int main()
 {
@@ -37,7 +37,7 @@ int main()
     cout << "====Go \"exit\" de thoat chuong trinh====" << endl;
     while(true) {
         char buffer[1024];
-        cout << "Nhap vao 3 canh cua tam giac: ";
+        cout << "Nhap lan luot ma sinh vien , ten sinh vien , tuoi  ";
         cin.getline(buffer, sizeof(buffer));
         if(strcmp(buffer, "exit") == 0) {
             return 1;
