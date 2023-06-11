@@ -117,6 +117,38 @@ int main()
         stu.setNameStudent(newStringData[1]);
         stu.setOld(newStringData[2]);
         /* start push infor student to file txt */
+        while(1){
+            
+        int choice ;
+            cout<<"Nhap 1 de sua Ma sinh vien"<<endl;
+            cout<<"Nhap 2 de sua Ten sinh vien"<<endl;
+            cout<<"Nhap 3 de sua Tuoi sinh vien"<<endl;
+            cout<<"Nhap 0 de Thoat"<<endl;
+            cin>>choice;
+            if(choice==1){
+                cout<<"Moi ma moi :";
+                string replaceCode;
+                cin>>replaceCode;
+                stu.setStudentCode(replaceCode);
+            }
+           else if(choice==2){
+            cout<<"Moi nhap ten moi :";
+                string replaceName;
+                cin>>replaceName;
+                stu.setNameStudent(replaceName);
+            }
+          else  if(choice==3){
+            cout<<"Moi nhap tuoi moi :";
+                string replaceOld;
+                cin>>replaceOld;
+                stu.setOld(replaceOld);
+            }
+           else {
+               break;
+            }
+
+            if(choice==0)break;
+        }
         ofstream fout("sinhvien.txt", ios::app);
         if (fout.is_open())
         {
